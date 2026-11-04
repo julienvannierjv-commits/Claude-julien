@@ -1,0 +1,29 @@
+id,date,canal,categorie,message,statut
+T-1012,2026-07-02,email,panier,"J'ai ajouté 2 fois le même voyage par erreur, en supprimant l'un les deux sont partis",resolu
+T-1015,2026-07-04,telephone,paiement,"Client veut payer en 3 fois, impossible",ferme
+T-1019,2026-07-06,email,recherche,"Je ne trouve pas Séville alors que je l'ai vue sur Instagram",resolu
+T-1023,2026-07-09,chat,panier,"Le total ne correspond pas : on est 3 et le prix est pour 1",resolu
+T-1027,2026-07-11,telephone,paiement,"Appelle pour réserver à 21h, personne ne répond",ferme
+T-1031,2026-07-15,email,recherche,"Le filtre durée ne marche pas, je mets week-end et j'ai des séjours de 2 semaines",ouvert
+T-1034,2026-07-18,email,carbone,"Pourquoi Amsterdam a un bilan carbone d'avion alors que vous vendez le train ?",ouvert
+T-1038,2026-07-21,chat,compte,"Comment retrouver ma réservation de l'an dernier ?",ferme
+T-1041,2026-07-24,email,panier,"Le code ESCALE10 appliqué 4 fois, j'ai eu -40%, vous honorez ?",escalade
+T-1044,2026-07-28,telephone,groupe,"Quand sort le voyage en groupe ? On est 12",ferme
+T-1049,2026-08-01,email,recherche,"Tri par prix complètement faux",ouvert
+T-1052,2026-08-03,chat,favoris,"Mes favoris ont disparu",ferme
+T-1056,2026-08-07,email,accessibilite,"Le site est difficile à lire pour mon père malvoyant",ouvert
+T-1060,2026-08-10,telephone,paiement,"Réservation abandonnée, attente de 25 minutes au téléphone",ferme
+T-1063,2026-08-12,email,recherche,"J'ai mis mes dates de vacances et on me propose des séjours sans tenir compte des dates",ouvert
+T-1067,2026-08-16,chat,panier,"Sur mobile je ne vois pas le bouton Appliquer du code promo",ouvert
+T-1071,2026-08-19,email,mystere,"La destination mystère ignore mon budget",ouvert
+T-1074,2026-08-22,email,information,"Est-ce que l'hôtel de Marrakech a une piscine ? Rien sur la fiche",resolu
+T-1078,2026-08-26,telephone,annulation,"Veut une assurance annulation, on n'en propose pas",ferme
+T-1082,2026-08-29,chat,recherche,"J'ai tapé Japon, aucun résultat, alors que Kyoto existe",ouvert
+T-1085,2026-09-02,email,famille,"Quels séjours conviennent à un enfant de 3 ans ?",resolu
+T-1089,2026-09-05,email,inspire,"Votre assistant ne comprend pas mes phrases",ouvert
+T-1093,2026-09-09,telephone,groupe,"Organisation d'un EVJF pour 10 personnes : comment chacune paie sa part ?",ferme
+T-1096,2026-09-12,chat,panier,"Le panier vide affiche 0 € mais le bouton Réserver est toujours actif",ouvert
+T-1101,2026-09-16,email,carbone,"Comment est calculé le CO2 ? Hôtel inclus ?",ouvert
+T-1104,2026-09-19,email,information,"Peut-on prolonger le séjour à Lisbonne d'une semaine ?",resolu
+T-1108,2026-09-23,chat,panier,"Le compteur du panier indique 3 alors que mon panier est vide",ouvert
+T-1112,2026-09-26,email,recherche,"J'ai mis le budget à 2150 € et Kyoto, qui coûte 2150 €, n'apparaît pas",ouvert

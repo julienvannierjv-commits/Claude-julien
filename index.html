@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escale — Voyagez selon vos envies</title>
+  <meta name="description" content="Escale, l'agence de voyage en ligne qui vous propose des destinations selon votre humeur.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+  <!-- ========== EN-TÊTE ========== -->
+  <header class="site-header">
+    <a href="#" class="logo">esc<span>a</span>le</a>
+    <nav class="main-nav">
+      <a href="#destinations">Destinations</a>
+      <a href="#envies">Par envie</a>
+      <a href="#inspire">Inspire-moi</a>
+      <a href="#" class="nav-soon">Voyage en groupe <span class="pill">Bientôt</span></a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="favorites-btn">♡</button>
+      <button class="icon-btn cart-btn" id="cart-btn">🧳 <span class="cart-count" id="cart-count">0</span></button>
+      <a href="#" class="btn btn-ghost">Se connecter</a>
+    </div>
+  </header>
+
+  <!-- ========== HERO + RECHERCHE ========== -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Plus de 40 000 voyageurs nous font confiance</p>
+      <h1>Où partez-vous <em>ensuite</em>&nbsp;?</h1>
+      <p class="hero-sub">Des séjours choisis selon votre humeur, votre budget et votre empreinte carbone.</p>
+
+      <form class="search-bar" id="search-form">
+        <label class="field">
+          <span>Destination</span>
+          <input type="text" id="search-query" placeholder="Ville, pays…" autocomplete="off">
+        </label>
+        <label class="field">
+          <span>Départ</span>
+          <input type="date" id="search-date">
+        </label>
+        <label class="field">
+          <span>Voyageurs</span>
+          <input type="number" id="search-travelers" min="1" max="9" value="2">
+        </label>
+        <label class="field">
+          <span>Durée</span>
+          <select id="search-duration">
+            <option value="">Peu importe</option>
+            <option value="weekend">Week-end</option>
+            <option value="week">1 semaine</option>
+            <option value="long">2 semaines et +</option>
+          </select>
+        </label>
+        <button type="submit" class="btn btn-primary">Rechercher</button>
+      </form>
+
+      <div class="hero-extra">
+        <label class="budget">
+          Budget max / pers. : <strong id="budget-value">2000 €</strong>
+          <input type="range" id="search-budget" min="200" max="3000" step="50" value="2000">
+        </label>
+        <button class="btn btn-mystery" id="mystery-btn">🎲 Destination mystère</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RECHERCHE PAR ENVIE (innovation) ========== -->
+  <section class="section" id="envies">
+    <div class="section-head">
+      <h2>Vous avez envie de…</h2>
+      <p>Choisissez une ambiance, on s'occupe du reste.</p>
+    </div>
+    <div class="mood-list" id="mood-list"></div>
+  </section>
+
+  <!-- ========== RÉSULTATS ========== -->
+  <section class="section" id="destinations">
+    <div class="section-head with-sort">
+      <div>
+        <h2>Nos destinations</h2>
+        <p id="results-info"></p>
+      </div>
+      <label class="sort">
+        Trier par
+        <select id="sort-select">
+          <option value="popular">Popularité</option>
+          <option value="price-asc">Prix croissant</option>
+          <option value="price-desc">Prix décroissant</option>
+          <option value="carbon">Empreinte carbone</option>
+        </select>
+      </label>
+    </div>
+    <div class="grid" id="results-grid"></div>
+  </section>
+
+  <!-- ========== ASSISTANT « INSPIRE-MOI » (innovation, prototype) ========== -->
+  <section class="section inspire" id="inspire">
+    <div class="inspire-card">
+      <div>
+        <p class="eyebrow">Nouveau · Bêta</p>
+        <h2>Décrivez votre voyage idéal</h2>
+        <p>Notre assistant vous propose une destination en quelques secondes.</p>
+      </div>
+      <form id="inspire-form" class="inspire-form">
+        <textarea id="inspire-input" rows="3" placeholder="Ex. : je veux de la plage, pas trop loin, avec mes enfants en avril"></textarea>
+        <button type="submit" class="btn btn-primary">Inspire-moi ✨</button>
+      </form>
+      <div class="inspire-answer" id="inspire-answer" hidden></div>
+    </div>
+  </section>
+
+  <!-- ========== PIED DE PAGE ========== -->
+  <footer class="site-footer">
+    <div>
+      <a href="#" class="logo">esc<span>a</span>le</a>
+      <p>Voyager mieux, voyager selon ses envies.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#">Qui sommes-nous</a>
+      <a href="#">Conditions générales</a>
+      <a href="#">Aide &amp; contact</a>
+      <a href="#">Assurance annulation</a>
+    </div>
+    <p class="copyright">© 2026 Escale — projet pédagogique fictif</p>
+  </footer>
+
+  <!-- ========== PANIER (tiroir latéral) ========== -->
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+    <div class="cart-head">
+      <h3>Mon panier</h3>
+      <button class="icon-btn" id="cart-close">✕</button>
+    </div>
+    <ul class="cart-items" id="cart-items"></ul>
+    <div class="cart-promo">
+      <input type="text" id="promo-input" placeholder="Code promo">
+      <button class="btn btn-ghost" id="promo-btn">Appliquer</button>
+    </div>
+    <div class="cart-total">
+      <span>Total</span>
+      <strong id="cart-total">0 €</strong>
+    </div>
+    <button class="btn btn-primary btn-block" id="checkout-btn">Réserver</button>
+  </aside>
+
+  <!-- ========== MODALE DÉTAIL DESTINATION ========== -->
+  <div class="modal" id="detail-modal" hidden>
+    <div class="modal-box" id="detail-content"></div>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <!-- Scripts : l'ordre compte (données → utilitaires → modules → application) -->
+  <script src="assets/js/data/destinations.js"></script>
+  <script src="assets/js/modules/utils.js"></script>
+  <script src="assets/js/modules/carbon.js"></script>
+  <script src="assets/js/modules/search.js"></script>
+  <script src="assets/js/modules/mood.js"></script>
+  <script src="assets/js/modules/cart.js"></script>
+  <script src="assets/js/modules/favorites.js"></script>
+  <script src="assets/js/modules/mystery.js"></script>
+  <script src="assets/js/modules/inspire.js"></script>
+  <script src="assets/js/modules/render.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
